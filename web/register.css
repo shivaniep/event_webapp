@@ -1,0 +1,79 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+html {
+    background-image: url('https://content.vu.edu.au/sites/default/files/styles/vu_large_16_9/public/media/images/events-managment-feature.jpg?h=c9f93661&itok=C6SZvnEy');
+}
+
+#form-container {
+    background-image: url('https://cdn.wallpapersafari.com/75/49/lg7sK4.png');
+    padding: 20px;
+    border-radius: 10px;
+    width: 60%;
+    margin: 5px auto 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    border: 3px solid white;
+    box-shadow: 0 0 40px #5ee4ff;
+}
+
+form {
+    text-align: left;
+}
+
+label {
+    color: white;
+}
+
+fieldset {
+    border: none;
+    margin-bottom: 20px;
+}
+
+legend {
+    font-weight: bold;
+    color: white;
+    margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="time"],
+input[type="number"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+    width: calc(100% - 6px);
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #6ECFF6;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+input[type="submit"]:hover {
+    background-color: #5ee4ff; /* Change to blue on hover */
+    color: black;
+    box-shadow: 0 0 10px #5ee4ff; /* Add shadow on hover */
+    border-radius: 0 10px 10px 0; /* Blue right radiate */
+}
+
+svg {
+    display: block;
+    margin: auto;
+}

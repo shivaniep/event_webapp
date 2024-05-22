@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="total.css">
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet">
+    <style>
+        svg {
+            display: block;
+            margin: auto;
+        }
+        
+        .center {
+            text-align: center;
+        }
+        
+        button {
+            background-color: #6ECFF6;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Participant Login</title>
+</head>
+<body>
+    <svg width="500" height="200" viewBox="0 0 500 200">
+        <defs>
+            <filter id="blurAndColor" x="0" y="0" width="200%" height="200%">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur" />
+                <feColorMatrix in="blur" type="matrix" values="
+                    0 0 0 0 0
+                    0 0 0 0 0
+                    0 0 1 0 0
+                    0 0 0 1 0" result="coloredBlur" />
+                <feMerge>
+                    <feMergeNode in="coloredBlur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+            </filter>
+        </defs>
+        <path id="curve" d="M10,100 Q250,0 490,100" fill="transparent" stroke="none"/>
+        <text font-family="Arial" font-size="36" fill="#6ECFF6" text-anchor="middle" filter="url(#blurAndColor)">
+            <textPath href="#curve" startOffset="50%">
+                EventEase
+            </textPath>
+        </text>
+    </svg>
+    <div class="div1"> 
+        <center>
+            <h2> Login as existing user </h2>
+            <form method="post" action="ValidateUser">
+                Username:<br><br>
+                <input type="text" id="uu" style="color: black;" name="uu" placeholder="Username"><br><br>
+                Password:<br><br>
+                <input type="password" id="up" style="color: black;" name="up" placeholder="Password"><br><br><br>
+                <input type="submit" id="sub" value="Submit">
+            </form>
+        </center>
+    </div>
+    <div>
+        <label class="topnav-right">
+             © 1999-2022 Evently. All rights reserved.
+        </label>
+    </div>
+</body>
+</html>

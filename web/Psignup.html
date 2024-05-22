@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="total.css">
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet">
+    <style>
+        svg {
+            display: block;
+            margin: auto;
+        }
+        
+        .center {
+            text-align: center;
+        }
+        
+        button {
+            background-color: #6ECFF6;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+   
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Login</title>
+</head>
+<body>
+    <svg width="500" height="200" viewBox="0 0 500 200">
+        <defs>
+            <filter id="blurAndColor" x="0" y="0" width="200%" height="200%">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur" />
+                <feColorMatrix in="blur" type="matrix" values="
+                    0 0 0 0 0
+                    0 0 0 0 0
+                    0 0 1 0 0
+                    0 0 0 1 0" result="coloredBlur" />
+                <feMerge>
+                    <feMergeNode in="coloredBlur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+            </filter>
+        </defs>
+        <path id="curve" d="M10,100 Q250,0 490,100" fill="transparent" stroke="none"/>
+        <text font-family="Arial" font-size="36" fill="#6ECFF6" text-anchor="middle" filter="url(#blurAndColor)">
+            <textPath href="#curve" startOffset="50%">
+                EventEase
+            </textPath>
+        </text>
+    </svg>
+    <div class="center">
+        <h3> Please enter your details below </h3>
+    </div>
+    <div class="div1">
+        <form method="post" action="NewUser" onsubmit="return validateForm()">
+            <center>
+            <p>
+                Name:<br>
+                <input type="text" id="uname" name="uname" placeholder="Name" style="color: black;" required>
+            </p>
+            <p>
+                Username:<br>
+                <input type="text" id="username" name="username" placeholder="Username" style="color: black;" required>
+            </p>
+            <p>
+                Password:<br>
+                <input type="password" id="userpassword" name="userpassword" placeholder="Password" style="color: black;" required>
+            </p>
+            <p>
+                Confirm Password:<br>
+                <input type="password" id="cpassword" name="cpassword" placeholder="Confirm Password" style="color: black;" required>
+            </p>
+            <br>
+            <input type="submit" id="sub" value="Submit">
+            </center>
+        </form>
+    </div>
+    <div class="center">
+        <label class="topnav-right">
+             © 1999-2022 EventEase. All rights reserved.
+        </label>
+    </div>
+
+    <script>
+        function validateForm() {
+            var password = document.getElementById("userpassword").value;
+            var confirmPassword = document.getElementById("cpassword").value;
+
+            if (password != confirmPassword) {
+                alert("Passwords do not match");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>

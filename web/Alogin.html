@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Login Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="total.css">
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet">
+    <style>
+        svg {
+            display: block;
+            margin: auto;
+        }
+        
+        button {
+            background-color: #6ECFF6;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        
+        .center{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <svg width="500" height="200" viewBox="0 0 500 200">
+        <defs>
+            <filter id="blurAndColor" x="0" y="0" width="200%" height="200%">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur" />
+                <feColorMatrix in="blur" type="matrix" values="
+                    0 0 0 0 0
+                    0 0 0 0 0
+                    0 0 1 0 0
+                    0 0 0 1 0" result="coloredBlur" />
+                <feMerge>
+                    <feMergeNode in="coloredBlur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+            </filter>
+        </defs>
+        <path id="curve" d="M10,100 Q250,0 490,100" fill="transparent" stroke="none"/>
+        <text font-family="Arial" font-size="36" fill="#6ECFF6" text-anchor="middle" filter="url(#blurAndColor)">
+            <textPath href="#curve" startOffset="50%">
+                EventEase
+            </textPath>
+        </text>
+    </svg>
+        <center>
+           <a href="index.html"><button> Home Page </button> </a>
+        </center><br><br>
+    <div class="div1">
+        <center><h2 style="color: white;"> Admin Login Page </h2></center>
+        <center>
+            <form method="post" action="ValidateAd">
+                Username:<br><br>
+                <input type="text" id="text" name="Ausername" placeholder="Username"><br><br>
+                Password:<br><br>
+                <input type="password" id="text" name="Apassword" placeholder="Password"><br><br>
+                <button id="sub" type="submit"> Submit </button>
+            </form>
+        </center>
+    </div>
+    <div>
+        <label class="topnav-right">
+             © 1999-2022 EventEase. All rights reserved.
+        </label>
+    </div>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="total.css">
+        <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet">
+        <style>
+            svg {
+            display: block;
+            margin: auto;
+            }
+            
+            div{
+            background-image:url('https://cdn.wallpapersafari.com/75/49/lg7sK4.png');
+            background-color: black;
+            box-shadow: 0 0 40px #5ee4ff;
+            width: 40%; 
+            height: 90px; 
+            margin-left: 27%; 
+            margin-right: 27%;
+            margin-top: 10px;
+            margin-bottom: 40px;
+            border: 5px solid;
+            border-radius: 50px;
+            padding: 50px;
+        }
+        
+        div:first-of-type {
+          margin-bottom: 50px; 
+        }
+        
+        p{
+          color: white;
+          font-size: 20px; 
+        }
+        
+        #button{
+           padding: 15px;
+           font-weight: bold;
+           font-size: 100%;
+           width: 170px;
+           text-align:center;
+           padding-top: 10px;
+           color: black;
+           background-color:#5ee4ff;
+           height: 49px;
+           align-self: center;
+          border-radius: 10px;
+          box-shadow: 0 0 20px #5ee4ff ;
+        }
+        #button:hover{
+            background: #5ee4ff;
+           color: black;
+          box-shadow: 0 0 40px #5ee4ff ;
+        }
+        </style>
+    </head>
+    <body>
+        <svg width="500" height="200" viewBox="0 0 500 200">
+        <defs>
+            <filter id="blurAndColor" x="0" y="0" width="200%" height="200%">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur" />
+                <feColorMatrix in="blur" type="matrix" values="
+                    0 0 0 0 0
+                    0 0 0 0 0
+                    0 0 1 0 0
+                    0 0 0 1 0" result="coloredBlur" />
+                <feMerge>
+                    <feMergeNode in="coloredBlur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+            </filter>
+        </defs>
+        <path id="curve" d="M10,100 Q250,0 490,100" fill="transparent" stroke="none"/>
+        <text font-family="Arial" font-size="36" fill="#6ECFF6" text-anchor="middle" filter="url(#blurAndColor)">
+            <textPath href="#curve" startOffset="50%">
+                EventEase
+            </textPath>
+        </text>
+    </svg>
+    <div>
+        <center>
+            <p>Thanks for booking with us!</p><br>
+            <p>Confirmation email has been sent to <b id="email"></b></p><br>
+            <button id="button" onclick="tohomepage()">Go to Home Page</button>
+        </center>
+    </div>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const email = urlParams.get('email');
+
+        document.getElementById('email').innerText = email;
+    </script>
+    <script>
+        function tohomepage(){
+            window.location.href="index.html"
+        }
+    </script>
+    </body>
+</html>

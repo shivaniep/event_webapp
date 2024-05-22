@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="total.css">
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet">
+    <style>
+        svg {
+            display: block;
+            margin: auto;
+        }
+        
+        .center {
+            text-align: center;
+        }
+        
+        button {
+            background-color: #6ECFF6;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <svg width="500" height="200" viewBox="0 0 500 200">
+        <defs>
+            <filter id="blurAndColor" x="0" y="0" width="200%" height="200%">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur" />
+                <feColorMatrix in="blur" type="matrix" values="
+                    0 0 0 0 0
+                    0 0 0 0 0
+                    0 0 1 0 0
+                    0 0 0 1 0" result="coloredBlur" />
+                <feMerge>
+                    <feMergeNode in="coloredBlur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+            </filter>
+        </defs>
+        <path id="curve" d="M10,100 Q250,0 490,100" fill="transparent" stroke="none"/>
+        <text font-family="Arial" font-size="36" fill="#6ECFF6" text-anchor="middle" filter="url(#blurAndColor)">
+            <textPath href="#curve" startOffset="50%">
+                EventEase
+            </textPath>
+        </text>
+    </svg>
+    
+    <div class="center">
+        <a href="index.html"><button> Home Page </button></a>
+    </div>
+    
+    <div class="center">
+        <h3> Create account if you are a new user </h3>
+        <a href="Psignup.html"><button>Sign Up</button></a>
+    </div>
+    
+    <br><br><br>
+    
+    <div class="center">
+        <h3>Already a user! Please login.</h3>
+        <a href="Plogin.html"><button>Login</button></a>
+    </div>
+    
+    <div>
+        <label class="topnav-right">
+             © 1999-2022 EventEase. All rights reserved.
+        </label>
+    </div>
+</body>
+</html>

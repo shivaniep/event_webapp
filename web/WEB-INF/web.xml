@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <servlet>
+        <servlet-name>ValidateAd</servlet-name>
+        <servlet-class>com.event.ValidateAd</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ValidateAd</servlet-name>
+        <url-pattern>/ValidateAd</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ValidateUser</servlet-name>
+        <servlet-class>com.event.ValidateUser</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ValidateUser</servlet-name>
+        <url-pattern>/ValidateUser</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>NewUser</servlet-name>
+        <servlet-class>com.event.NewUser</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>NewUser</servlet-name>
+        <url-pattern>/NewUser</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Register</servlet-name>
+        <servlet-class>com.event.Register</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Register</servlet-name>
+        <url-pattern>/Register</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>EventDataServlet</servlet-name>
+        <servlet-class>com.event.EventDataServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EventDataServlet</servlet-name>
+        <url-pattern>/EventDataServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>FilterEvent</servlet-name>
+        <servlet-class>com.event.FilterEvent</servlet-class> 
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>FilterEvent</servlet-name>
+        <url-pattern>/FilterEvent</url-pattern> 
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>EventCalender</servlet-name>
+        <servlet-class>com.event.EventCalender</servlet-class> 
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>EventCalender</servlet-name>
+        <url-pattern>/event</url-pattern> 
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>updateDate</servlet-name>
+        <servlet-class>com.event.updateDate</servlet-class> 
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>updateDate</servlet-name>
+        <url-pattern>/updateDate</url-pattern> 
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>GetEventDetails</servlet-name>
+        <servlet-class>com.event.GetEventDetails</servlet-class> 
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>GetEventDetails</servlet-name>
+        <url-pattern>/GetEventDetails</url-pattern> 
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ConfirmBooking</servlet-name>
+        <servlet-class>com.event.ConfirmBooking</servlet-class> 
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ConfirmBooking</servlet-name>
+        <url-pattern>/ConfirmBooking</url-pattern> 
+    </servlet-mapping>
+     
+     
+    <session-config>
+        <session-timeout>30</session-timeout>
+    </session-config>
+</web-app>

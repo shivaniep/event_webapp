@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login Page</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="total.css">
+        <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <svg width="500" height="200" viewBox="0 0 500 200" style="display: block; margin: auto; vertical-align: middle;">
+    <defs>
+        <filter id="blurAndColor" x="0" y="0" width="200%" height="200%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur" />
+            <feColorMatrix in="blur" type="matrix" values="
+                0 0 0 0 0
+                0 0 0 0 0
+                0 0 1 0 0
+                0 0 0 1 0" result="coloredBlur" />
+            <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+    </defs>
+    <path id="curve" d="M10,100 Q250,0 490,100" fill="transparent" stroke="none"/>
+    <text font-family="Arial" font-size="36" fill="#6ECFF6" text-anchor="middle" filter="url(#blurAndColor)">
+        <textPath href="#curve" startOffset="50%">
+            EventEase
+        </textPath>
+    </text>
+</svg>
+        <h2 style="text-align: center">Simplify. Celebrate. EventEase</h2>
+        <div>
+            <center>
+                <img src="https://github.com/AAdewunmi/Event-Management-System-Java/blob/main/web/admin.png?raw=true" alt="Admin Image" width="100" height="100" />
+            </center>
+            <center>
+                <p>
+                    <a href="Alogin.html"><button>Admin Login</button> </a>
+                </p>
+            </center>
+            <center>
+                <img src="https://github.com/AAdewunmi/Event-Management-System-Java/blob/main/web/part.png?raw=true" alt="Participant Image" width="100" height="100" />
+            </center>
+            <center>
+                <a href="Parlogin.html"><button>User Login</button></a>
+                <br>
+            </center>
+        </div>
+        <div class="div" style="text-align: center">
+            <p style="margin-top: 20px; color: white;">Follow us on social media!</p>
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-twitter"></a>
+            <a href="#" class="fa fa-youtube"></a>
+            <a href="#" class="fa fa-instagram"></a>
+            <a href="#" class="fa fa-pinterest"></a>
+            <a href="#" class="fa fa-snapchat-ghost"></a><br><br>
+        </div>
+        <label class="topnav-right">
+                © 1999-2022 EventEase. All rights reserved.
+        </label>
+    </body>
+</html>

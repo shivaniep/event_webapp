@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        #frame1 {
+            background-image: url("https://content.vu.edu.au/sites/default/files/styles/vu_large_16_9/public/media/images/events-managment-feature.jpg?h=c9f93661&itok=C6SZvnEy");
+            background-repeat: no-repeat;
+            background-size: 110%;
+            background-opacity: 70%;
+            background-color: black;
+            height: 15%;
+        }
+        
+        #frame2 {
+            background-image:url('https://cdn.wallpapersafari.com/75/49/lg7sK4.png');
+            background-color: black;
+            height: 5%;
+        }
+        
+        a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            display: inline-block;
+            padding: 5px 20px;
+            position: relative;
+        }
+
+        #container {
+            display: flex;
+            height: 80%;
+            overflow-y: auto;
+        }
+
+        #frame3 {
+            flex: 0 0 15%;
+            background-image: url('https://cdn.wallpapersafari.com/75/49/lg7sK4.png');
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+        }
+
+        #frame4 {
+            flex: 1; 
+        }
+        
+        a:hover .dropdown-content {
+            display: block;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            background-image: url('https://cdn.wallpapersafari.com/75/49/lg7sK4.png');
+            min-width: 160px;
+            padding: 12px 16px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        
+        .dropdown:hover + .dropdown-content {
+         display: block;
+       }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+        
+        #button {
+            background-color: #6ECFF6;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        
+        .eventItem {
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        background-size: cover;
+        background-position: center;
+        color: white;
+        margin-left: 20px;
+        margin-top: 20px;
+        flex: 0 0 auto;
+       }
+       
+       #event-conatiner{
+        display: flex; 
+        flex-wrap: wrap; 
+        margin: 0 auto;
+        width: 80%;
+       }
+    </style>
+</head>
+<body>
+    <div id="frame1">
+        <svg width="500" height="200" viewBox="0 0 500 200" style="display: block; margin: auto; vertical-align: middle;">
+            <defs>
+                <filter id="blurAndColor" x="0" y="0" width="200%" height="200%">
+                    <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur" />
+                    <feColorMatrix in="blur" type="matrix" values="
+                        0 0 0 0 0
+                        0 0 0 0 0
+                        0 0 1 0 0
+                        0 0 0 1 0" result="coloredBlur" />
+                    <feMerge>
+                        <feMergeNode in="coloredBlur"/>
+                        <feMergeNode in="SourceGraphic"/>
+                    </feMerge>
+                </filter>
+            </defs>
+            <path id="curve" d="M10,100 Q250,0 490,100" fill="transparent" stroke="none"/>
+            <text font-family="Arial" font-size="36" fill="#6ECFF6" text-anchor="middle" filter="url(#blurAndColor)">
+                <textPath href="#curve" startOffset="50%">
+                    EventEase
+                </textPath>
+            </text>
+        </svg>
+    </div>
+    <div id="frame2">
+        <table width="115%">
+            <tr>
+                <td><a href="Dashboard.html">Dashboard</a></td>
+                <td><a href="Events.html">Events</a></td>
+                <td><a href="calender.html">Calender</a></td>
+                <td><a href="#" class="dropdown" onmouseover="dropdownMenu(event)">Settings</a>
+                    <div class="dropdown-content">
+                        <a href="#" onclick="logout(event)">Logout</a>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="container">
+        <div id="frame3">
+
+
+            <h3 style="font-weight: bold">Filters</h3>
+            <form id="myform" method="get" action="/FilterEvent" onsubmit="applyFilter(event)">
+                
+                <p id="category">
+                    Category:<br>
+                    <input type="checkbox" name="category" value="Music"> Music<br>
+                    <input type="checkbox" name="category" value="Sports"> Sports<br>
+                    <input type="checkbox" name="category" value="Arts"> Arts<br>
+                    <input type="checkbox" name="category" value="Conference"> Conference<br>
+                </p>
+                <p id="location">
+                    Location:<br>
+                    <input type="checkbox" name="location" value="Hyderabad"> Hyderabad<br>
+                    <input type="checkbox" name="location" value="Bengaluru"> Bengaluru<br>
+                    <input type="checkbox" name="location" value="Chennai"> Chennai<br>
+                </p>
+                <p id="status">
+                    Status:<br>
+                    <input type="checkbox" name="status" value="Ongoing"> Ongoing<br>
+                    <input type="checkbox" name="status" value="Upcoming"> Upcoming<br>
+                    <input type="checkbox" name="status" value="Completed"> Completed<br>
+                </p>
+                <p>
+                    Start Date:<br>
+                    <input type="date" id="sdate" name="sdate">
+                </p>
+                <p>
+                    End Date:<br>
+                    <input type="date" id="edate" name="edate">
+                </p>
+                <input type="submit" value="Apply Filters" id="button">
+                
+            </form>
+        </div>
+
+        <div id="eventContainer">
+        </div>
+    </div>
+
+    <script>
+    function fetchEventData() {
+        fetch('http://localhost:8080/Event_WebApp/EventDataServlet')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Failed to fetch event data: ' + response.status);
+                }
+                return response.json();
+            })
+            .then(eventData => displayEventData(eventData))
+            .catch(error => console.error(error));
+    }
+    
+
+    function displayEventData(eventData) {
+        var eventContainer = document.getElementById('eventContainer');
+        eventContainer.innerHTML = '';
+
+        eventData.forEach(function (event) {
+    
+       var eventItem = document.createElement('div');
+       eventItem.classList.add('eventItem');
+
+    
+       eventItem.style.backgroundImage = 'url("https://cdn.wallpapersafari.com/75/49/lg7sK4.png")';
+
+       eventItem.innerHTML = '<h3>' + event.event_name + '</h3>' +
+                          '<p>Type: ' + event.event_type.charAt(0).toUpperCase() + event.event_type.slice(1) + '</p>' +
+                          '<p>Date: ' + event.event_date + '</p>' +
+                          '<p>Time: ' + event.event_time + '</p>' +
+                          '<p>Budget: ' + event.budget + '</p>';
+
+      eventContainer.appendChild(eventItem);
+    });
+    }
+    fetchEventData();
+
+  </script>
+
+    <script>
+        function logout(event){
+            if(confirm("Are you sure you want to logout?")){
+                window.location.href="index.html";
+            }
+             event.stopPropagation();
+        }
+
+        function dropdownMenu(event){
+            var dropdownContent = document.querySelector('.dropdown-content');
+            var settingsLink = document.querySelector('.dropdown');
+
+            settingsLink.addEventListener('mouseover', function() {
+                dropdownContent.style.display = 'block';
+            });
+
+            settingsLink.addEventListener('mouseout', function(event) {
+
+                if (!event.relatedTarget || !event.relatedTarget.classList.contains('dropdown-content')) {
+                    dropdownContent.style.display = 'none';
+                }
+            });
+        }
+    </script>
+    <script>
+        function applyFilter(event) {
+    event.preventDefault(); 
+
+    var selectedCategory = document.querySelector('input[name="category"]:checked').value;
+    var selectedLocation = document.querySelector('input[name="location"]:checked').value;
+    var selectedStatus = document.querySelector('input[name="status"]:checked').value;
+    var startDate = document.getElementById('sdate').value;
+    var endDate = document.getElementById('edate').value;
+
+    var filterURL = 'http://localhost:8080/Event_WebApp/FilterEvent?category=' + encodeURIComponent(selectedCategory) +
+'&location=' + encodeURIComponent(selectedLocation) +
+'&status=' + encodeURIComponent(selectedStatus) +
+'&startDate=' + encodeURIComponent(startDate) +
+'&endDate=' + encodeURIComponent(endDate);
+
+
+
+    fetch(filterURL)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Failed to fetch filtered event data: ' + response.status);
+            }
+            return response.json();
+        })
+        .then(filteredEvents => {
+            // Assuming you have a function named displayEventData to display the filtered data
+            displayFilterEventData(filteredEvents);
+        })
+        .catch(error => console.error(error));
+}
+
+
+        function displayFilterEventData(filteredEvents) {
+    var eventContainer = document.getElementById('eventContainer');
+    eventContainer.innerHTML = ''; // Clear existing content
+
+    // Iterate over the filtered events and create HTML elements to display them
+    filteredEvents.forEach(function(event) {
+        var eventItem = document.createElement('div');
+        eventItem.classList.add('eventItem');
+        
+        eventItem.style.backgroundImage = 'url("https://cdn.wallpapersafari.com/75/49/lg7sK4.png")';
+        
+        var capitalizedType = event.type.charAt(0).toUpperCase() + event.type.slice(1);
+
+        // Construct the HTML content for each event item
+        var htmlContent = '<h3>' + event.name + '</h3>' +
+                          '<p>Type: ' + capitalizedType + '</p>' +
+                          '<p>Date: ' + event.date + '</p>' +
+                          '<p>Location: ' + event.location + '</p>';
+        
+        // Set the HTML content for the event item
+        eventItem.innerHTML = htmlContent;
+
+        // Append the event item to the event container
+        eventContainer.appendChild(eventItem);
+    });
+}
+
+        </script>
+
+</body>
+</html>
